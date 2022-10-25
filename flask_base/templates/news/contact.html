@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% block titulo %}Contacto{% endblock %}
+{% block contenido %}
+
+{% include '_menu.html' %}
+
+<main id="main">
+    <section id="contact" class="contact mb-5">
+        <div class="container" data-aos="fade-up">
+
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5">
+                    <h1 class="page-title">Contact us</h1>
+                </div>
+            </div>
+
+            <div class="row gy-4">
+
+                <div class="col-md-4">
+                    <div class="info-item">
+                        <i class="bi bi-geo-alt"></i>
+                        <h3>Address</h3>
+                        <address>A108 Adam Street, NY 535022, USA</address>
+                    </div>
+                </div><!-- End Info Item -->
+
+                <div class="col-md-4">
+                    <div class="info-item info-item-borders">
+                        <i class="bi bi-phone"></i>
+                        <h3>Phone Number</h3>
+                        <p><a href="tel:+155895548855">+1 5589 55488 55</a></p>
+                    </div>
+                </div><!-- End Info Item -->
+
+                <div class="col-md-4">
+                    <div class="info-item">
+                        <i class="bi bi-envelope"></i>
+                        <h3>Email</h3>
+                        <p><a href="mailto:info@example.com">info@example.com</a></p>
+                    </div>
+                </div><!-- End Info Item -->
+
+            </div>
+
+            <div class="form mt-5">
+                <form action="/process_news" method="POST" enctype=multipart/form-data>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <input type="text" name="title" class="form-control" id="title" placeholder="Titulo Noticia"
+                                required>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <input type="text" class="form-control" name="category" id="category" placeholder="Categoria"
+                                required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="resume" id="resume" placeholder="resumen"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" name="content" rows="5" placeholder="Contenido"
+                            required></textarea>
+                    </div>
+                    <div class="my-3">
+                        <div class="loading">Loading</div>
+                        <div class="error-message"></div>
+                        <div class="sent-message">Your message has been sent. Thank you!</div>
+                    </div>
+                    <div >
+                        <label for="formFileSm" class="form-label">Adjunte foto noticia</label>
+                        <input class="form-control form-control-sm" id="formFileSm" type="file" name="file" required />
+                        <!-- <input type=file name=file> -->
+                    </div>
+                    <div class="text-center"><button type="submit">Send Message</button></div>
+                </form>
+            </div><!-- End Contact Form -->
+
+        </div>
+    </section>
+
+</main><!-- End #main -->
+
+
+{% include '_footer.html' %}
+
+{% endblock %}

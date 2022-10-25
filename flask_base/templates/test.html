@@ -1,0 +1,18 @@
+
+<main id="main" style="background-color:red ;">
+{%for news in all_news%}
+    <span>{{news.created_at}}</span>
+    <h1> {{news.title}}</h1>
+    <h2>{{news.resume}}</h2>
+    <h3>{{news.category}}</h3>
+    <h4>{{news.content}}</h4>
+
+    <div class="mt-15 col-md-10 col-lg-4">
+        <img src='/uploads/{{ news.image }}' width="500" class=" rounded float-start" alt="Imagen de noticia">
+    </div>
+    <br>
+{%endfor%}
+
+
+</main>
+
